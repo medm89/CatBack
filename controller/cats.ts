@@ -14,6 +14,11 @@ const breeds = async (_ : Request, res : Response) => {
             id: cat.id,
             name: cat.name,
             image: cat.image,
+            temperament: cat.temperament,
+            origin: cat.origin,
+            description: cat.description,
+            life_span: cat.life_span,
+            wikipedia_url: cat.wikipedia_url,
             reference_image_id: cat.reference_image_id,
         }));
         return res.status(200).json(
@@ -37,6 +42,11 @@ const breedsId = async (req: Request, res: Response)=>{
         const cats: ICatBreed = {
             id: response.data.id,
             name: response.data.name,
+            temperament: response.data.temperament,
+            origin: response.data.origin,
+            description: response.data.description,
+            life_span: response.data.life_span,
+            wikipedia_url: response.data.wikipedia_url,
             reference_image_id: response.data.reference_image_id,
         }
         return res.status(200).json(
@@ -69,6 +79,11 @@ const breedsSearch = async (req: Request, res: Response)=>{
             id: cat.id,
             name: cat.name,
             image: cat.image,
+            temperament: cat.temperament,
+            origin: cat.origin,
+            description: cat.description,
+            life_span: cat.life_span,
+            wikipedia_url: cat.wikipedia_url,
             reference_image_id: cat.reference_image_id,
         }));
         return res.status(200).json(
