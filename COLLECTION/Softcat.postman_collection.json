@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "f8e9ad7b-ce10-4268-ac10-a94ffe4bb43f",
+		"name": "Softcat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34774384"
+	},
+	"item": [
+		{
+			"name": "cat",
+			"item": [
+				{
+					"name": "breeds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}cats/breeds",
+							"host": [
+								"{{URL}}cats"
+							],
+							"path": [
+								"breeds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "breed/breed_id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}cats/breed/abys",
+							"host": [
+								"{{URL}}cats"
+							],
+							"path": [
+								"breed",
+								"abys"
+							],
+							"query": [
+								{
+									"key": "breed_id",
+									"value": "abys",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "breeds/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}cats/breeds/search?q=abys&attach_image=4",
+							"host": [
+								"{{URL}}cats"
+							],
+							"path": [
+								"breeds",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "abys"
+								},
+								{
+									"key": "attach_image",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "images",
+			"item": [
+				{
+					"name": "imagebyId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}img/imagesbybreedid?breed_ids=abys&limit=10",
+							"host": [
+								"{{URL}}img"
+							],
+							"path": [
+								"imagesbybreedid"
+							],
+							"query": [
+								{
+									"key": "breed_ids",
+									"value": "abys"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Martin Diaz\",\r\n    \"email\":\"medm89@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/register",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"medm89@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/login",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
